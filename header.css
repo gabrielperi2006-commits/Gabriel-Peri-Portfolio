@@ -1,0 +1,264 @@
+/* Navigation — thème noir + bleu */
+
+nav,
+.site-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.95rem 2rem;
+    background: rgba(8, 10, 12, 0.78);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(30, 123, 255, 0.28);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+    z-index: 1000;
+}
+
+.site-nav__list{
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav__link{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    color: rgba(234, 243, 255, 0.9);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.84rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    position: relative;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.site-nav__link::after{
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 8px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(30,123,255,0), rgba(30,123,255,0.85), rgba(69,179,255,0));
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.site-nav__link:hover{
+    color: #ffffff;
+    background: rgba(30, 123, 255, 0.14);
+    box-shadow:
+        0 0 0 1px rgba(30, 123, 255, 0.35) inset,
+        0 10px 28px rgba(30, 123, 255, 0.16);
+    transform: translateY(-1px);
+}
+
+.site-nav__link:hover::after{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.site-nav__link.active,
+.site-nav__link[aria-current="page"]{
+    color: #ffffff;
+    background: rgba(30, 123, 255, 0.18);
+    box-shadow:
+        0 0 0 1px rgba(30, 123, 255, 0.45) inset,
+        0 12px 34px rgba(30, 123, 255, 0.2);
+}
+
+/* Burger menu (mobile) */
+.site-nav__checkbox{
+    display: none;
+}
+
+.menu-toggle,
+.site-nav__toggle{
+    display: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid rgba(30, 123, 255, 0.25);
+    background: rgba(8, 10, 12, 0.45);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-toggle:hover,
+.site-nav__toggle:hover{
+    transform: translateY(-1px);
+    border-color: rgba(30, 123, 255, 0.45);
+    background: rgba(30, 123, 255, 0.12);
+}
+
+.site-nav__bar{
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(234, 243, 255, 0.9);
+    margin: 4px 0;
+    border-radius: 999px;
+}
+
+/* Burger -> icône voiture (design)
+   On garde le HTML identique, mais on masque les 3 barres et on affiche une petite voiture. */
+.menu-toggle.site-nav__toggle{
+    position: relative;
+}
+
+.menu-toggle.site-nav__toggle .site-nav__bar{
+    display: none;
+}
+
+.menu-toggle.site-nav__toggle::before{
+    content: "";
+    width: 26px;
+    height: 26px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px 26px;
+    /* SVG inline (stroke clair) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M2.5 10.2h4" stroke="%23EAF2FF" stroke-width="1.8" stroke-linecap="round"/><path d="M1.8 13h5.2" stroke="%23EAF2FF" stroke-width="1.8" stroke-linecap="round"/><path d="M6.2 15.2h12.8c1.6 0 2.9-1.3 2.9-2.9v-.2c0-1.2-.8-2.3-2-2.7l-2.2-.6-1.7-1.9A3.7 3.7 0 0 0 13.3 5.6h-2.9A4.1 4.1 0 0 0 7 7.5L5.6 9.9l-2.2.5A2.6 2.6 0 0 0 1.4 13c.2 1.2 1.3 2.2 2.6 2.2h1" stroke="%23EAF2FF" stroke-width="1.8" stroke-linejoin="round"/><path d="M7.9 10.2l1.6-2.2c.4-.6 1.1-1 1.8-1h2.4c.7 0 1.3.3 1.8.8l2 2.4" stroke="%23EAF2FF" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8.1" cy="17.2" r="1.8" stroke="%23EAF2FF" stroke-width="1.8"/><circle cx="17.3" cy="17.2" r="1.8" stroke="%23EAF2FF" stroke-width="1.8"/></svg>');
+}
+
+/* Sur la nav "home" (barre bleue), on bascule le trait en noir pour rester lisible */
+.site-nav--home .menu-toggle.site-nav__toggle::before{
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M2.5 10.2h4" stroke="%230B0F14" stroke-width="1.8" stroke-linecap="round"/><path d="M1.8 13h5.2" stroke="%230B0F14" stroke-width="1.8" stroke-linecap="round"/><path d="M6.2 15.2h12.8c1.6 0 2.9-1.3 2.9-2.9v-.2c0-1.2-.8-2.3-2-2.7l-2.2-.6-1.7-1.9A3.7 3.7 0 0 0 13.3 5.6h-2.9A4.1 4.1 0 0 0 7 7.5L5.6 9.9l-2.2.5A2.6 2.6 0 0 0 1.4 13c.2 1.2 1.3 2.2 2.6 2.2h1" stroke="%230B0F14" stroke-width="1.8" stroke-linejoin="round"/><path d="M7.9 10.2l1.6-2.2c.4-.6 1.1-1 1.8-1h2.4c.7 0 1.3.3 1.8.8l2 2.4" stroke="%230B0F14" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8.1" cy="17.2" r="1.8" stroke="%230B0F14" stroke-width="1.8"/><circle cx="17.3" cy="17.2" r="1.8" stroke="%230B0F14" stroke-width="1.8"/></svg>');
+}
+
+
+/* Accueil — barre bleue (comme la maquette) */
+.site-nav--home{
+    background: var(--color-peach);
+    backdrop-filter: none;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+.site-nav--home .site-nav__logo{
+    color: #0B0F14;
+}
+
+.site-nav--home .site-nav__link{
+    color: #0B0F14;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    font-style: italic;
+    font-weight: 700;
+    padding: 0.35rem 0.6rem;
+}
+
+.site-nav--home .site-nav__link::after{
+    content: ".";
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    height: auto;
+    background: none;
+    opacity: 1;
+    transform: none;
+    margin-left: 2px;
+}
+
+.site-nav--home .site-nav__link:hover{
+    transform: none;
+    background: transparent;
+    color: #0B0F14;
+}
+
+.site-nav--home .site-nav__link:hover::after{
+    opacity: 1;
+    transform: none;
+}
+
+.site-nav--home .site-nav__bar{
+    background: rgba(11, 15, 20, 0.9);
+}
+
+.site-nav--home .menu-toggle,
+.site-nav--home .site-nav__toggle{
+    border-color: rgba(11, 15, 20, 0.25);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+}
+
+.site-nav--home .site-nav__link.active,
+.site-nav--home .site-nav__link[aria-current="page"]{
+    background: transparent;
+    box-shadow: none;
+}
+
+@media (max-width: 900px){
+    nav,
+    .site-nav{
+        padding: 0.8rem 1rem;
+    }
+
+    .menu-toggle,
+    .site-nav__toggle{
+        display: inline-flex;
+    }
+
+    .site-nav__list{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 0.9rem;
+        background: rgba(8, 10, 12, 0.92);
+        border-bottom: 1px solid rgba(30, 123, 255, 0.22);
+        box-shadow: 0 18px 45px rgba(0,0,0,0.7);
+        transform: translateY(-8px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .site-nav__item{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav__link{
+        width: 100%;
+        max-width: 420px;
+    }
+
+    /* Toggle menu with checkbox */
+    .site-nav__checkbox:checked ~ .site-nav__list{
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* Accueil (mobile) */
+    .site-nav--home .site-nav__list{
+        background: var(--color-peach);
+        border-bottom: none;
+        box-shadow: none;
+    }
+
+}

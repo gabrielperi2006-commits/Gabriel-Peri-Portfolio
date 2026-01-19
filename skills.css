@@ -1,0 +1,31 @@
+/* Skills bars - Dynamic widths */
+
+/* Photographie - 90% */
+.skills__card:nth-child(1) .skills__fill {
+    width: 90%;
+}
+
+/* Vidéographie - 88% */
+.skills__card:nth-child(2) .skills__fill {
+    width: 88%;
+}
+
+/* Montage & Colorimétrie - 86% */
+.skills__card:nth-child(3) .skills__fill {
+    width: 86%;
+}
+
+/* Retouche Photo - 84% */
+.skills__card:nth-child(4) .skills__fill {
+    width: 84%;
+}
+
+/* Vidéographie Automobile - 92% */
+.skills__card:nth-child(5) .skills__fill {
+    width: 92%;
+}
+
+/* Direction Créative - 86% */
+.skills__card:nth-child(6) .skills__fill {
+    width: 86%;
+}
