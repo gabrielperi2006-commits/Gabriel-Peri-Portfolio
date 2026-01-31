@@ -1,0 +1,196 @@
+/* ==========================================================
+   PROJET.CSS (surcouche) — uniquement la page projets
+   Objectif: éviter les doublons avec styles.css + améliorer l’UX
+   ========================================================== */
+
+/* ==========================================================
+   TABS + BADGES — design "pill" bleu (EN COURS / COMPLÉTÉ)
+   ========================================================== */
+.projects-page {
+    padding-bottom: 4rem;
+}
+
+/* Sections projets (on réduit le padding global des <section>) */
+.projects-page {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.projects-page .projects-section {
+    padding: 0 2rem 5rem;
+}
+
+.projects-page .projects-section:first-child {
+    padding-top: 2.25rem;
+}
+
+
+/* ==========================================================
+   BASE LAYOUT — déplacé depuis styles.css (perf: moins de CSS inutile sur l’accueil)
+   ========================================================== */
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.projects__card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.projects__card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(30, 123, 255, 0.2);
+}
+
+.projects__image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: var(--color-peach);
+
+    position: relative;
+}
+
+.projects__image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    display: block;
+}
+
+.projects__card h3 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    color: var(--color-peach);
+    font-size: 1.3rem;
+}
+
+.projects__card p {
+    padding: 0 1.5rem 1.5rem;
+    color: rgba(234, 243, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.projects__status {
+    font-size: 0.85rem;
+    color: var(--color-tan);
+    font-weight: 600;
+    padding-left: 1.5rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0 !important;
+}
+
+/* Pill (utilisé pour les onglets + statuts des cartes) */
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 1.15rem;
+    border-radius: 999px;
+    border: 1px solid rgba(30, 123, 255, 0.55);
+    background: linear-gradient(180deg, rgba(7, 25, 52, 0.92) 0%, rgba(4, 15, 32, 0.92) 100%);
+    color: rgba(234, 243, 255, 0.92);
+    font-weight: 900;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 12px 26px rgba(0, 0, 0, 0.28);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.status-pill::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(122, 208, 255, 1) 0%, rgba(65, 170, 243, 1) 45%, rgba(30, 123, 255, 1) 100%);
+    box-shadow:
+        0 0 0 4px rgba(30, 123, 255, 0.14),
+        inset 0 0 0 2px rgba(4, 15, 32, 0.62);
+    flex: 0 0 11px;
+}
+
+.status-pill:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.07),
+        0 16px 34px rgba(0, 0, 0, 0.34);
+}
+
+.status-pill:focus-visible {
+    outline: 2px solid rgba(30, 123, 255, 0.85);
+    outline-offset: 2px;
+}
+
+/* Titres de sections (COMPLÉTÉ / EN COURS) */
+/* Le H2 reste centré (text-align). On neutralise juste le style "grand titre" */
+.section__title--pill {
+    font-size: 1rem;
+    font-style: normal;
+    color: inherit;
+    margin-bottom: 2.25rem;
+    letter-spacing: 0;
+}
+
+.status-pill--heading {
+    cursor: default;
+}
+
+.status-pill--heading:hover {
+    transform: none;
+}
+
+/* Statuts sur les cartes: même pill, mais avec un placement cohérent */
+.project-card .project-status {
+    margin: 1rem 1.5rem 0;
+    /* écrase le padding-left !important dans styles.css */
+    padding-left: 1.15rem !important;
+}
+
+/* Les statuts sur les cartes ne sont pas des boutons */
+.project-card .project-status {
+    cursor: default;
+}
+
+.project-card .project-status:hover {
+    transform: none;
+}
+
+.project-card .project-status:focus-visible {
+    outline: none;
+}
+
+/* Perf: évite de peindre/layouter les sections hors écran (Chrome) */
+@supports (content-visibility: auto) {
+    .projects-page .projects-section {
+        content-visibility: auto;
+        contain-intrinsic-size: 900px;
+    }
+}
+
+/* Centrer le bouton "Me contacter pour un projet" en bas de page */
+.back-button {
+    text-align: center;
+    margin: 3rem auto 0;
+    padding: 2rem 0;
+    max-width: 1300px;
+    width: 100%;
+}
