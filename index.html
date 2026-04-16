@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Security / Best practices -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; media-src 'self' https:; style-src 'self'; script-src 'none'; form-action 'self' mailto:; require-trusted-types-for 'script'; trusted-types default; upgrade-insecure-requests; block-all-mixed-content">
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-    <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
-    <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; media-src 'self'; style-src 'self'; script-src 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Portfolio de Gabriel Peri - Photographe et vidéaste spécialisé en automobile. Découvrez mes réalisations en photographie, vidéographie et direction créative.">
     <meta name="theme-color" content="#1E7BFF">
@@ -33,6 +30,8 @@
 <title>Gabriel Peri - Photographe & Vidéaste</title>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+    <header class="page-header">
     <nav class="site-nav">
         <a href="index.html#accueil" class="logo site-nav__logo">
             <img src="logo-gpp.webp" alt="Logo GPP - Gabriel Peri" class="site-nav__logo-img" decoding="async" fetchpriority="high" width="60" height="60">
@@ -57,20 +56,22 @@
         </ul>
     </nav>
 
-    <section id="accueil" class="hero">
+    <section id="accueil" class="hero" aria-labelledby="hero-title">
         <div class="hero__content">
             <div class="hero__text">
                 <img class="hero__title-car hero__title-car--front" src="porsche_front.webp" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high" width="1200" height="1000">
-                <h1 class="hero__title">Gabriel Peri</h1>
+                <h1 class="hero__title" id="hero-title">Gabriel Peri</h1>
                 <p class="subtitle hero__subtitle">Photographe, Vidéaste</p>
                 <a href="index.html#realisations" class="cta-button btn btn--primary hero__cta">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#0B0F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M12 5l7 7-7 7" stroke="#0B0F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     <span>Découvrir mon Travail</span>
                 </a>
             </div>
         </div>
     </section>
+    </header>
 
+    <main id="main-content">
     <section id="realisations" class="portfolio portfolio--simple">
         <h2 class="section__title">Mes Réalisations</h2>
         <div class="realisations-tabs tabs" role="region" aria-label="Filtre Réalisations">
@@ -173,7 +174,7 @@
 
             <div class="skills__card">
                 <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M5 7h3l1.4-2h5.2L16 7h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                         <circle cx="12" cy="13" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
                         <path d="M17.3 10.2h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
@@ -186,7 +187,7 @@
 
             <div class="skills__card">
                 <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <rect x="3.5" y="7" width="12.5" height="10" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
                         <path d="M16 10l4.6-2.6v9.2L16 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                         <path d="M7.5 11.2h.01M10.5 11.2h.01M7.5 13.8h.01M10.5 13.8h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
@@ -199,7 +200,7 @@
 
             <div class="skills__card">
                 <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <rect x="4" y="6.5" width="16" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
                         <path d="M8 6.5v11M16 6.5v11" fill="none" stroke="currentColor" stroke-width="1.8"/>
                         <path d="M6 9h.01M6 12h.01M6 15h.01M18 9h.01M18 12h.01M18 15h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
@@ -214,7 +215,7 @@
 
             <div class="skills__card">
                 <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M7 17l7.8-7.8a2.2 2.2 0 0 1 3.1 0 2.2 2.2 0 0 1 0 3.1L10.1 20H7v-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                         <path d="M12.2 6.6l1.1-1.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                         <path d="M15.6 7.9l1.6-.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -229,7 +230,7 @@
 
             <div class="skills__card">
                 <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <!-- Traits de vitesse -->
                         <path d="M2.5 10.2h4" fill="none" stroke="currentColor" stroke-width="1.8"/>
                         <path d="M1.8 13h5.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
@@ -250,7 +251,7 @@
 
             <div class="skills__card">
                 <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M4 9.5h16v9.2A2.3 2.3 0 0 1 17.7 21H6.3A2.3 2.3 0 0 1 4 18.7V9.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                         <path d="M4.8 5.2l14.7-3.1 1 4.5-14.7 3.1-1-4.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                         <path d="M8 6.2l2.1 3.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -270,7 +271,7 @@
         <h2 class="section__title">À Propos de Moi</h2>
         <div class="about__content">
             <div class="about__text">
-                <h2>Gabriel Peri</h2>
+                <p class="about__name">Gabriel Peri</p>
                 <p>Photographe et vidéaste basé en Corse, je crée des images cinématographiques avec une attention particulière portée aux détails et à l’émotion.</p>
                 <p>Spécialisé en contenu automobile, je réalise aussi des shootings et vidéos pour particuliers, marques et événements : portraits, produits, lifestyle et reportages.</p>
                 <p>De la prise de vue au montage, j’apporte une approche exigeante et créative pour livrer un rendu propre, percutant et fidèle à votre univers.</p>
@@ -301,7 +302,7 @@
                 </a>
             </div>
 
-            <form class="contact__form" id="contactForm" method="post" action="mailto:gabriel.peri2006@gmail.com?subject=Contact%20depuis%20le%20portfolio" enctype="text/plain">
+            <form class="contact__form" id="contactForm" method="post" action="mailto:gabriel.peri2006@gmail.com?subject=Contact%20depuis%20le%20portfolio" enctype="text/plain" target="_blank">
                 <label class="u-sr-only" for="contactName">Votre nom</label>
                 <input class="contact__input" id="contactName" name="name" type="text" placeholder="Votre nom" required>
 
@@ -318,6 +319,7 @@
             </form>
         </div>
     </section>
+    </main>
 
     <!-- No JavaScript: tabs and lightbox are implemented with CSS-only techniques. -->
 
