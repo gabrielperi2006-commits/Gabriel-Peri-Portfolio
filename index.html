@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Security / Best practices -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; media-src 'self' https:; style-src 'self'; script-src 'none'; form-action 'self' mailto:; upgrade-insecure-requests; block-all-mixed-content">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; media-src 'self' https:; style-src 'self'; script-src 'none'; form-action 'self' mailto:; require-trusted-types-for 'script'; trusted-types default; upgrade-insecure-requests; block-all-mixed-content">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
     <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
+    <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Portfolio de Gabriel Peri - Photographe et vidéaste spécialisé en automobile. Découvrez mes réalisations en photographie, vidéographie et direction créative.">
     <meta name="theme-color" content="#1E7BFF">
