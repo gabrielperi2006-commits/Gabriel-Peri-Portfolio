@@ -1235,3 +1235,124 @@ img {
     min-height: 48px;
     line-height: 1.2;
 }
+
+
+/* ========================================
+   CORRECTIONS ACCESSIBILITÉ SITEIMPROVE
+   ======================================== */
+
+.site-nav__checkbox,
+.tabs__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+.site-nav__checkbox:focus-visible + .site-nav__toggle,
+.tabs__input:focus-visible + .tabs__label,
+.site-nav__link:focus-visible,
+.site-nav__logo:focus-visible,
+.cta-button:focus-visible,
+.contact__social-link:focus-visible,
+.contact__submit:focus-visible,
+.lightbox-close:focus-visible,
+.play-overlay:focus-visible,
+.video-thumb:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}
+
+.site-nav__logo,
+.site-nav__link,
+.menu-toggle,
+.site-nav__toggle,
+.tabs__label,
+.cta-button,
+.contact__submit,
+.contact__social-link,
+.lightbox-close,
+.play-overlay {
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.site-nav__link,
+.tabs__label,
+.cta-button span,
+.contact__submit,
+.section__lead {
+    line-height: 1.5;
+}
+
+.site-nav__logo {
+    min-width: 64px;
+    min-height: 64px;
+}
+
+.section__lead {
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+    color: rgba(234, 242, 255, 0.92);
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+.contact__lead {
+    margin-bottom: 2rem;
+}
+
+.tabs-labels {
+    margin-bottom: 2.5rem;
+}
+
+.tabs__label {
+    padding-inline: 1.25rem;
+}
+
+.gallery__item a,
+.video-thumb {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.contact__submit {
+    color: #ffffff;
+    background: #0d4fb3;
+    box-shadow: 0 10px 30px rgba(13, 79, 179, 0.35);
+}
+
+.contact__submit:hover {
+    background: #0b4aa8;
+}
+
+.about__name {
+    margin-top: 0;
+}
+
+.site-footer {
+    padding: 1.5rem 2rem 2rem;
+    background: #0B0F14;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer__text {
+    max-width: 1100px;
+    margin: 0 auto;
+    color: rgba(234, 242, 255, 0.82);
+    text-align: center;
+    line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+    .section__lead {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
