@@ -30,9 +30,11 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000;
-    background-image: url('tile_noir_vagues_bleu_1024x1024_tileable.webp');
-    background-repeat: repeat;
-    background-size: 1024px 1024px;
+    background-image:
+        radial-gradient(circle at top, rgba(30, 123, 255, 0.12), transparent 36%),
+        linear-gradient(180deg, #05070a 0%, #0b0f14 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: scroll;
     color: var(--color-text);
     overflow-x: hidden;
@@ -443,8 +445,10 @@ nav, .site-nav {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('tile_noir_vagues_bleu_1024x1024_tileable.webp') center/1024px 1024px repeat;
-    opacity: 0.65;
+    background:
+        radial-gradient(circle at center, rgba(30, 123, 255, 0.10), transparent 42%),
+        linear-gradient(180deg, rgba(5, 7, 10, 0.92), rgba(11, 15, 20, 0.96));
+    opacity: 1;
     z-index: 0;
     filter: brightness(0.4);
 }
