@@ -21,11 +21,11 @@
     <meta name="language" content="French">
     <link rel="icon" type="image/webp" href="logo-gpp.webp">
     <!-- Performance -->
-    <link rel="preload" href="styles_siteimprove.css" as="style">
+    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" as="image" href="porsche_front.webp" fetchpriority="high">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles_siteimprove.css">
+    <link rel="stylesheet" href="styles.css">
 
 <title>Gabriel Peri - Photographe & Vidéaste</title>
 </head>
@@ -38,7 +38,7 @@
         </a>
 
         <!-- Burger CSS -->
-        <input type="checkbox" id="menu-toggle" class="site-nav__checkbox" aria-controls="site-menu" aria-label="Afficher ou masquer le menu principal">
+        <input type="checkbox" id="menu-toggle" class="site-nav__checkbox" aria-controls="site-menu">
         <label class="menu-toggle site-nav__toggle" for="menu-toggle">
             <span class="u-sr-only">Ouvrir ou fermer le menu</span>
             <span class="site-nav__bar"></span>
@@ -71,12 +71,10 @@
     </section>
     </header>
 
-    <main id="main-content" role="main">
-    <section id="realisations" class="portfolio portfolio--simple" aria-labelledby="realisations-title">
-        <h2 id="realisations-title" class="section__title">Mes Réalisations</h2>
-        <p class="section__lead">Une sélection de projets photo et vidéo pensés pour mettre en valeur les véhicules, les marques et les univers visuels.</p>
-        <div class="realisations-tabs tabs" role="region" aria-labelledby="realisations-filter-title">
-            <h3 id="realisations-filter-title" class="u-sr-only">Filtrer les réalisations</h3>
+    <main id="main-content">
+    <section id="realisations" class="portfolio portfolio--simple">
+        <h2 class="section__title">Mes Réalisations</h2>
+        <div class="realisations-tabs tabs" role="region" aria-label="Filtre Réalisations">
             <input type="radio" name="realisations-tab" id="tab-photos" class="tabs__input" checked>
             <input type="radio" name="realisations-tab" id="tab-videos" class="tabs__input">
             <input type="radio" name="realisations-tab" id="tab-autos" class="tabs__input">
@@ -170,9 +168,8 @@
         </div>
     </section>
 
-        <section id="competences" class="skills" aria-labelledby="competences-title">
-        <h2 id="competences-title" class="section__title">Mes Compétences</h2>
-        <p class="section__lead">De la prise de vue à la post-production, chaque prestation est pensée pour produire un rendu propre, cohérent et impactant.</p>
+        <section id="competences" class="skills">
+        <h2 class="section__title">Mes Compétences</h2>
         <div class="skills__grid">
 
             <div class="skills__card">
@@ -270,12 +267,11 @@
         </div>
     </section>
 
-    <section id="apropos" class="about" aria-labelledby="apropos-title">
-        <h2 id="apropos-title" class="section__title">À Propos de Moi</h2>
-        <p class="section__lead">Je crée des images et des vidéos au service d'univers visuels exigeants, avec une approche cinématographique et soignée.</p>
+    <section id="apropos" class="about">
+        <h2 class="section__title">À Propos de Moi</h2>
         <div class="about__content">
             <div class="about__text">
-                <h3 class="about__name">Gabriel Peri</h3>
+                <p class="about__name">Gabriel Peri</p>
                 <p>Photographe et vidéaste basé en Corse, je crée des images cinématographiques avec une attention particulière portée aux détails et à l’émotion.</p>
                 <p>Spécialisé en contenu automobile, je réalise aussi des shootings et vidéos pour particuliers, marques et événements : portraits, produits, lifestyle et reportages.</p>
                 <p>De la prise de vue au montage, j’apporte une approche exigeante et créative pour livrer un rendu propre, percutant et fidèle à votre univers.</p>
@@ -284,12 +280,14 @@
         </div>
     </section>
 
-    <section id="contact" class="contact" aria-labelledby="contact-title">
+    <section id="contact" class="contact">
         <div class="contact__content">
-            <h2 id="contact-title">Me Contacter</h2>
-            <p class="section__lead contact__lead">Parlons de votre projet photo ou vidéo. Vous pouvez me contacter via les réseaux sociaux ou m'envoyer un message avec le formulaire ci-dessous.</p>
+            <h2>Me Contacter</h2>
+            <p class="contact__intro">Parlez-moi de votre projet photo ou vidéo, je vous répondrai au plus vite.</p>
 
-            <div class="contact__social" role="region" aria-label="Réseaux sociaux">
+            <div class="contact__social-wrapper">
+                <h3 class="u-sr-only">Mes réseaux sociaux</h3>
+                <div class="contact__social" role="region" aria-label="Réseaux sociaux">
                 <a class="contact__social-link" href="https://www.instagram.com/gperi2a/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <svg class="contact__social-icon" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.8A5.2 5.2 0 1 1 6.8 14 5.2 5.2 0 0 1 12 8.8zm0 2A3.2 3.2 0 1 0 15.2 14 3.2 3.2 0 0 0 12 10.8zM17.8 6.7a1.2 1.2 0 1 1-1.2-1.2 1.2 1.2 0 0 1 1.2 1.2z"/>
@@ -305,9 +303,10 @@
                         <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.6c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.4.7-1.4 1.4V12H16l-.5 3h-2.5v7A10 10 0 0 0 22 12z"/>
                     </svg>
                 </a>
+                </div>
             </div>
 
-            <form class="contact__form" id="contactForm" method="post" action="mailto:gabriel.peri2006@gmail.com?subject=Contact%20depuis%20le%20portfolio" enctype="text/plain" target="_blank" aria-label="Formulaire de contact">
+            <form class="contact__form" id="contactForm" method="post" action="mailto:gabriel.peri2006@gmail.com?subject=Contact%20depuis%20le%20portfolio" enctype="text/plain" target="_blank">
                 <label class="u-sr-only" for="contactName">Votre nom</label>
                 <input class="contact__input" id="contactName" name="name" type="text" placeholder="Votre nom" autocomplete="name" required>
 
@@ -325,10 +324,6 @@
         </div>
     </section>
     </main>
-
-    <footer class="site-footer" role="contentinfo">
-        <p class="site-footer__text">© Gabriel Peri — Portfolio photo et vidéo automobile.</p>
-    </footer>
 
     <!-- No JavaScript: tabs and lightbox are implemented with CSS-only techniques. -->
 
