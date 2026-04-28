@@ -3,329 +3,507 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Security / Best practices -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; media-src 'self'; style-src 'self'; script-src 'none'">
+    <!-- Security / Best practices -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; media-src 'self'; style-src 'self'; script-src 'self' 'sha256-Yab5ZCmyjrxSdFRJy+gSghcUNnM7lCpbXUeb02xDtOY='; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="description" content="Portfolio de Gabriel Peri - Photographe et vidéaste spécialisé en automobile. Découvrez mes réalisations en photographie, vidéographie et direction créative.">
-    <meta name="theme-color" content="#1E7BFF">
-    <meta name="keywords" content="Photographe, Vidéaste, Automobile, Corse, Portfolio, Production vidéo, Photographie">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+    <meta name="description" content="Portfolio de Gabriel Peri, photographe et vidéaste basé en Corse, spécialisé dans les images cinématographiques, l'automobile, la vidéo et la direction créative.">
+    <meta name="theme-color" content="#F7B955">
+    <meta name="keywords" content="Gabriel Peri, Photographe, Vidéaste, Automobile, Corse, Portfolio, Production vidéo, Photographie, Retouche, Colorimétrie">
     <meta name="author" content="Gabriel Peri">
-    <meta property="og:title" content="Gabriel Peri - Photographe & Vidéaste">
-    <meta property="og:description" content="Portfolio de Gabriel Peri - Photographe et vidéaste spécialisé en automobile.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gabrielperi2006-commits.github.io/Gabriel-Peri-Portfolio/">
-        <link rel="canonical" href="https://gabrielperi2006-commits.github.io/Gabriel-Peri-Portfolio/">
-<meta property="og:image" content="https://gabrielperi2006-commits.github.io/Gabriel-Peri-Portfolio/logo-gpp.webp">
-    <meta name="twitter:card" content="summary_large_image">
     <meta name="robots" content="index, follow">
     <meta name="language" content="French">
-    <link rel="icon" type="image/webp" href="logo-gpp.webp">
+
+    <meta property="og:title" content="Gabriel Peri - Photographe & Vidéaste">
+    <meta property="og:description" content="Portfolio de Gabriel Peri - images cinématographiques, automobile, photographie et vidéo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gabrielperi.com">
+    <meta property="og:image" content="https://gabrielperi.com/logo-gpp.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="canonical" href="https://gabrielperi.com/">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%23F7B955' width='32' height='32'/><text x='16' y='24' font-size='24' font-weight='bold' fill='white' text-anchor='middle'>GP</text></svg>">
+
     <!-- Performance -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" as="image" href="porsche_front.webp" fetchpriority="high">
 
+    <link rel="preload" as="image" href="car-burger.svg" type="image/svg+xml">
+
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 
-<title>Gabriel Peri - Photographe & Vidéaste</title>
+    <title>Gabriel Peri - Photographe & Vidéaste</title>
 </head>
 <body>
-    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
-    <header class="page-header" role="banner">
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
     <nav class="site-nav" aria-label="Navigation principale">
-        <a href="#accueil" class="logo site-nav__logo" aria-label="Retour à l'accueil">
+        <a href="index.html#accueil" class="site-nav__logo" aria-label="Retour à l'accueil">
             <img src="logo-gpp.webp" alt="Logo GPP - Gabriel Peri" class="site-nav__logo-img" decoding="async" fetchpriority="high" width="60" height="60">
         </a>
 
-        <!-- Burger CSS -->
-        <input type="checkbox" id="menu-toggle" class="site-nav__checkbox" aria-controls="site-menu">
-        <label class="menu-toggle site-nav__toggle" for="menu-toggle">
-            <span class="u-sr-only">Ouvrir ou fermer le menu</span>
+        <input type="checkbox" id="menu-toggle" class="site-nav__checkbox">
+        <label class="site-nav__toggle" for="menu-toggle" aria-label="Ouvrir ou fermer le menu" aria-controls="site-menu">
+            <img class="site-nav__car-icon" src="car-burger.svg" alt="" aria-hidden="true" width="28" height="15">
             <span class="site-nav__bar"></span>
             <span class="site-nav__bar"></span>
             <span class="site-nav__bar"></span>
         </label>
 
-        <ul class="site-nav__list" id="site-menu" aria-label="Menu principal">
-            <li class="site-nav__item"><a href="#accueil" class="active site-nav__link site-nav__link--active" aria-current="page">Accueil</a></li>
-            <li class="site-nav__item"><a href="#realisations" class="site-nav__link">Réalisations</a></li>
+        <ul class="site-nav__list" id="site-menu">
+            <li class="site-nav__item"><a href="index.html#accueil" class="site-nav__link site-nav__link--active" aria-current="page">Accueil</a></li>
+            <li class="site-nav__item"><a href="index.html#realisations" class="site-nav__link">Réalisations</a></li>
             <li class="site-nav__item"><a href="projet.html" class="site-nav__link">Projets</a></li>
-            <li class="site-nav__item"><a href="#competences" class="site-nav__link">Compétences</a></li>
-            <li class="site-nav__item"><a href="#apropos" class="site-nav__link">À Propos</a></li>
-            <li class="site-nav__item"><a href="#contact" class="site-nav__link">Contact</a></li>
+            <li class="site-nav__item"><a href="index.html#competences" class="site-nav__link">Compétences</a></li>
+            <li class="site-nav__item"><a href="index.html#apropos" class="site-nav__link">À propos</a></li>
+            <li class="site-nav__item"><a href="index.html#contact" class="site-nav__link">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="accueil" class="hero" aria-labelledby="hero-title">
-        <div class="hero__content">
-            <div class="hero__text">
-                <img class="hero__title-car hero__title-car--front" src="porsche_front.webp" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high" width="1200" height="1000">
-                <h1 class="hero__title" id="hero-title">Gabriel Peri</h1>
-                <p class="subtitle hero__subtitle">Photographe, Vidéaste</p>
-                <a href="#realisations" class="cta-button btn btn--primary hero__cta">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#0B0F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span>Découvrir mon Travail</span>
-                </a>
-            </div>
-        </div>
-    </section>
-    </header>
+    <main id="contenu">
+        <section id="accueil" class="hero">
+            <div class="hero__glow hero__glow--one" aria-hidden="true"></div>
+            <div class="hero__glow hero__glow--two" aria-hidden="true"></div>
 
-    <main id="main-content">
-    <section id="realisations" class="portfolio portfolio--simple">
-        <h2 class="section__title">Mes Réalisations</h2>
-        <div class="realisations-tabs tabs" role="region" aria-label="Filtre Réalisations">
-            <input type="radio" name="realisations-tab" id="tab-photos" class="tabs__input" checked>
-            <input type="radio" name="realisations-tab" id="tab-videos" class="tabs__input">
-            <input type="radio" name="realisations-tab" id="tab-autos" class="tabs__input">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <p class="eyebrow hero__eyebrow">Portfolio visuel • Corse</p>
+                    <img class="hero__title-car hero__title-car--front" src="porsche_front.webp" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high" width="1200" height="1000">
+                    <h1 class="hero__title">Gabriel Peri</h1>
+                    <p class="subtitle hero__subtitle">Photographe &amp; vidéaste automobile</p>
+                    <p class="hero__description">Des images nerveuses, propres et cinématographiques pour mettre en valeur véhicules, marques, événements et projets créatifs.</p>
 
-            <div class="tabs-labels realisations-actions">
-                <label class="tabs__label" for="tab-photos">Photos</label>
-                <label class="tabs__label" for="tab-videos">Vidéos</label>
-                <label class="tabs__label" for="tab-autos">Automobile</label>
-            </div>
+                    <div class="hero__actions">
+                        <a href="index.html#realisations" class="btn btn--primary hero__cta">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#0B0F14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>Voir mon travail</span>
+                        </a>
+                        <a href="index.html#contact" class="btn btn--ghost">Discuter d'un projet</a>
+                    </div>
 
-            <div id="gallery-photos" class="gallery gallery--photos" aria-live="polite">
-                <div class="gallery__item"><a href="#lb-photos-1"><img src="BMW.webp" alt="BMW" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a></div>
-                <div class="gallery__item"><a href="#lb-photos-2"><img src="Porsche.webp" alt="Porsche 911" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a></div>
-                <div class="gallery__item"><a href="#lb-photos-3"><img src="Ford.webp" alt="Ford" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a></div>
-            </div>
-
-            <div id="gallery-videos" class="gallery gallery--videos">
-                <div class="gallery__item">
-                    <a href="#lb-videos-1" class="video-thumb" aria-label="Ouvrir la vidéo 1">
-                        <img src="BMW.webp" alt="Aperçu vidéo" loading="lazy" decoding="async" width="400" height="300" fetchpriority="low">
-                    </a>
-                    <a class="play-overlay" href="#lb-videos-1" aria-label="Lire la vidéo">▶</a>
-                </div>
-                <div class="gallery__item">
-                    <a href="#lb-videos-2" class="video-thumb" aria-label="Ouvrir la vidéo 2">
-                        <img src="BMW.webp" alt="Aperçu vidéo" loading="lazy" decoding="async" width="400" height="300" fetchpriority="low">
-                    </a>
-                    <a class="play-overlay" href="#lb-videos-2" aria-label="Lire la vidéo">▶</a>
-                </div>
-                <div class="gallery__item">
-                    <a href="#lb-videos-3" class="video-thumb" aria-label="Ouvrir la vidéo 3">
-                        <img src="BMW.webp" alt="Aperçu vidéo" loading="lazy" decoding="async" width="400" height="300" fetchpriority="low">
-                    </a>
-                    <a class="play-overlay" href="#lb-videos-3" aria-label="Lire la vidéo">▶</a>
+                    <dl class="hero__stats" aria-label="Points forts">
+                        <div class="hero__stat">
+                            <dt>Auto</dt>
+                            <dd>Spécialité image</dd>
+                        </div>
+                        <div class="hero__stat">
+                            <dt>Photo + Vidéo</dt>
+                            <dd>Production complète</dd>
+                        </div>
+                        <div class="hero__stat">
+                            <dt>Corse</dt>
+                            <dd>Lumières naturelles</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
 
-            <div id="gallery-auto" class="gallery gallery--autos">
-                <div class="gallery__item"><a href="#lb-autos-1"><img src="Arri%C3%A8re%20haut.webp" alt="Porsche GT3RS" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a></div>
-                <div class="gallery__item"><a href="#lb-autos-2"><img src="Alpine.webp" alt="Alpine" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a></div>
-                <div class="gallery__item"><a href="#lb-autos-3"><img src="Renault.webp" alt="R5" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a></div>
+            <a class="scroll-cue" href="#realisations" aria-label="Descendre vers les réalisations">
+                <span></span>
+            </a>
+        </section>
+
+        <section id="realisations" class="portfolio portfolio--simple">
+            <div class="section-heading">
+                <p class="eyebrow">Sélection</p>
+                <h2 class="section__title">Mes Réalisations</h2>
+                <p class="section__intro">Une galerie courte, lisible et directe : photos, vidéos et contenu automobile, avec ouverture en plein écran sans JavaScript.</p>
             </div>
-        </div>
-<!-- CSS-only lightboxes (one per item) -->
-        <div id="lb-photos-1" class="lightbox">
-            <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
-            <img src="BMW.webp" alt="BMW" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
-        </div>
-        <div id="lb-photos-2" class="lightbox">
-            <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
-            <img src="Porsche.webp" alt="Porsche 911" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
-        </div>
-        <div id="lb-photos-3" class="lightbox">
-            <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
-            <img src="Ford.webp" alt="Ford" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
-        </div>
 
-        <div id="lb-videos-1" class="lightbox">
-            <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
-            <video controls playsinline preload="none" poster="BMW.webp" width="800" height="450">
-                <source src="Bmw.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture vidéo.
-            </video>
-        </div>
-        <div id="lb-videos-2" class="lightbox">
-            <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
-            <video controls playsinline preload="none" poster="BMW.webp" width="800" height="450">
-                <source src="BMW%20Blanche.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture vidéo.
-            </video>
-        </div>
-        <div id="lb-videos-3" class="lightbox">
-            <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
-            <video controls playsinline preload="none" poster="BMW.webp" width="800" height="450">
-                <source src="BMW%20Bleu.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture vidéo.
-            </video>
-        </div>
+            <div class="realisations-tabs tabs" aria-label="Filtre Réalisations">
+                <input type="radio" name="realisations-tab" id="tab-photos" class="tabs__input" checked>
+                <input type="radio" name="realisations-tab" id="tab-videos" class="tabs__input">
+                <input type="radio" name="realisations-tab" id="tab-autos" class="tabs__input">
 
-        <div id="lb-autos-1" class="lightbox">
-            <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
-            <img src="Arri%C3%A8re%20haut.webp" alt="Porsche GT3RS" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
-        </div>
-        <div id="lb-autos-2" class="lightbox">
-            <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
-            <img src="Alpine.webp" alt="Alpine" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
-        </div>
-        <div id="lb-autos-3" class="lightbox">
-            <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
-            <img src="Renault.webp" alt="R5" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
-        </div>
-    </section>
+                <div class="tabs-labels realisations-actions">
+                    <label class="tabs__label" for="tab-photos">Photos</label>
+                    <label class="tabs__label" for="tab-videos">Vidéos</label>
+                    <label class="tabs__label" for="tab-autos">Automobile</label>
+                </div>
+
+                <div id="gallery-photos" class="gallery gallery--photos" aria-live="polite">
+                    <figure class="gallery__item">
+                        <a href="#lb-photos-1"><img src="BMW.webp" alt="BMW photographiée dans une ambiance cinématographique" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a>
+                        <figcaption>BMW • Série photo</figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <a href="#lb-photos-2"><img src="Porsche.webp" alt="Porsche 911 en shooting automobile" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a>
+                        <figcaption>Porsche 911 • Détails</figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <a href="#lb-photos-3"><img src="Ford.webp" alt="Ford mise en scène pour un shooting lifestyle" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a>
+                        <figcaption>Ford • Lifestyle</figcaption>
+                    </figure>
+                </div>
+
+                <div id="gallery-videos" class="gallery gallery--videos">
+                    <figure class="gallery__item gallery__item--video">
+                        <a href="#lb-videos-1" class="video-thumb" aria-label="Ouvrir la vidéo BMW M4">
+                            <img src="BMW.webp" alt="Aperçu vidéo BMW M4" loading="lazy" decoding="async" width="400" height="300" fetchpriority="low">
+                            <span class="play-overlay" aria-hidden="true">▶</span>
+                        </a>
+                        <figcaption>BMW M4 • Spot dynamique</figcaption>
+                    </figure>
+                    <figure class="gallery__item gallery__item--video">
+                        <a href="#lb-videos-2" class="video-thumb" aria-label="Ouvrir la vidéo BMW blanche">
+                            <img src="BMW.webp" alt="Aperçu vidéo BMW blanche" loading="lazy" decoding="async" width="400" height="300" fetchpriority="low">
+                            <span class="play-overlay" aria-hidden="true">▶</span>
+                        </a>
+                        <figcaption>BMW blanche • Réseaux sociaux</figcaption>
+                    </figure>
+                    <figure class="gallery__item gallery__item--video">
+                        <a href="#lb-videos-3" class="video-thumb" aria-label="Ouvrir la vidéo BMW bleue">
+                            <img src="BMW.webp" alt="Aperçu vidéo BMW bleue" loading="lazy" decoding="async" width="400" height="300" fetchpriority="low">
+                            <span class="play-overlay" aria-hidden="true">▶</span>
+                        </a>
+                        <figcaption>BMW bleue • Cinématique</figcaption>
+                    </figure>
+                </div>
+
+                <div id="gallery-auto" class="gallery gallery--autos">
+                    <figure class="gallery__item">
+                        <a href="#lb-autos-1"><img src="Arrière haut.webp" alt="Porsche GT3 RS vue arrière" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a>
+                        <figcaption>Porsche GT3 RS • Angle fort</figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <a href="#lb-autos-2"><img src="Alpine.webp" alt="Alpine photographiée en extérieur" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a>
+                        <figcaption>Alpine • Shooting extérieur</figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <a href="#lb-autos-3"><img src="Renault.webp" alt="Renault R5 dans une ambiance automobile" loading="lazy" decoding="async" width="600" height="450" fetchpriority="low"></a>
+                        <figcaption>Renault R5 • Heritage</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- CSS-only lightboxes -->
+            <div id="lb-photos-1" class="lightbox">
+                <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
+                <img src="BMW.webp" alt="BMW" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+            <div id="lb-photos-2" class="lightbox">
+                <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
+                <img src="Porsche.webp" alt="Porsche 911" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+            <div id="lb-photos-3" class="lightbox">
+                <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
+                <img src="Ford.webp" alt="Ford" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+
+            <div id="lb-videos-1" class="lightbox">
+                <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
+                <video controls playsinline preload="none" poster="BMW.webp" width="800" height="450">
+                    <source src="Bmw.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+            </div>
+            <div id="lb-videos-2" class="lightbox">
+                <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
+                <video controls playsinline preload="none" poster="BMW.webp" width="800" height="450">
+                    <source src="BMW Blanche.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+            </div>
+            <div id="lb-videos-3" class="lightbox">
+                <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
+                <video controls playsinline preload="none" poster="BMW.webp" width="800" height="450">
+                    <source src="BMW Bleu.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+            </div>
+
+            <div id="lb-autos-1" class="lightbox">
+                <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
+                <img src="Arrière haut.webp" alt="Porsche GT3 RS" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+            <div id="lb-autos-2" class="lightbox">
+                <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
+                <img src="Alpine.webp" alt="Alpine" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+            <div id="lb-autos-3" class="lightbox">
+                <a class="lightbox-close" href="#realisations" aria-label="Fermer">×</a>
+                <img src="Renault.webp" alt="Renault R5" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+        </section>
 
         <section id="competences" class="skills">
-        <h2 class="section__title">Mes Compétences</h2>
-        <div class="skills__grid">
+            <div class="section-heading">
+                <p class="eyebrow">Savoir-faire</p>
+                <h2 class="section__title">Mes Compétences</h2>
+                <p class="section__intro">Une approche complète : préparation, prise de vue, montage, colorimétrie et direction artistique.</p>
+            </div>
 
-            <div class="skills__card">
-                <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M5 7h3l1.4-2h5.2L16 7h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <circle cx="12" cy="13" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                        <path d="M17.3 10.2h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
+            <div class="skills__grid">
+                <article class="skills__card">
+                    <div class="skills__icon">
+                        <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M5 7h3l1.4-2h5.2L16 7h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                            <circle cx="12" cy="13" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M17.3 10.2h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Photographie</h3>
+                    <p>Prises de vue soignées : portrait, produit, lifestyle, événement et automobile, avec un rendu propre et cinématographique.</p>
+                    <div class="skills__bar" aria-hidden="true"><div class="skills__fill"></div></div>
+                </article>
+
+                <article class="skills__card">
+                    <div class="skills__icon">
+                        <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="3.5" y="7" width="12.5" height="10" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M16 10l4.6-2.6v9.2L16 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M7.5 11.2h.01M10.5 11.2h.01M7.5 13.8h.01M10.5 13.8h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Vidéographie</h3>
+                    <p>Tournage stabilisé, mouvements dynamiques et narration visuelle pour clips, événements, marques et contenus sociaux.</p>
+                    <div class="skills__bar" aria-hidden="true"><div class="skills__fill"></div></div>
+                </article>
+
+                <article class="skills__card">
+                    <div class="skills__icon">
+                        <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="4" y="6.5" width="16" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M8 6.5v11M16 6.5v11" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M6 9h.01M6 12h.01M6 15h.01M18 9h.01M18 12h.01M18 15h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M10 19.5h4M9 21h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Montage &amp; colorimétrie</h3>
+                    <p>Rythme, sound design, étalonnage et finitions pour donner une identité premium à chaque vidéo.</p>
+                    <div class="skills__bar" aria-hidden="true"><div class="skills__fill"></div></div>
+                </article>
+
+                <article class="skills__card">
+                    <div class="skills__icon">
+                        <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7 17l7.8-7.8a2.2 2.2 0 0 1 3.1 0 2.2 2.2 0 0 1 0 3.1L10.1 20H7v-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M12.2 6.6l1.1-1.1M15.6 7.9l1.6-.4M13.2 10.3l.4 1.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                            <path d="M5.2 5.2l1.2.4.4 1.2.4-1.2 1.2-.4-1.2-.4-.4-1.2-.4 1.2-1.2.4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Retouche photo</h3>
+                    <p>Nettoyage, couleurs, peau et optimisation web avec un rendu naturel, professionnel et sans sur-traitement.</p>
+                    <div class="skills__bar" aria-hidden="true"><div class="skills__fill"></div></div>
+                </article>
+
+                <article class="skills__card skills__card--featured">
+                    <div class="skills__icon">
+                        <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M2.5 10.2h4M1.8 13h5.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M6.2 15.2h12.8c1.6 0 2.9-1.3 2.9-2.9v-.2c0-1.2-.8-2.3-2-2.7l-2.2-.6-1.7-1.9A3.7 3.7 0 0 0 13.3 5.6h-2.9A4.1 4.1 0 0 0 7 7.5L5.6 9.9l-2.2.5A2.6 2.6 0 0 0 1.4 13c.2 1.2 1.3 2.2 2.6 2.2h1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M7.9 10.2l1.6-2.2c.4-.6 1.1-1 1.8-1h2.4c.7 0 1.3.3 1.8.8l2 2.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                            <circle cx="8.1" cy="17.2" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                            <circle cx="17.3" cy="17.2" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                        </svg>
+                    </div>
+                    <h3>Vidéographie automobile</h3>
+                    <p>Angles bas, détails carrosserie, plans roulants, mouvements fluides et ambiance sonore pour donner du caractère au véhicule.</p>
+                    <div class="skills__bar" aria-hidden="true"><div class="skills__fill"></div></div>
+                </article>
+
+                <article class="skills__card">
+                    <div class="skills__icon">
+                        <svg class="skills__icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4 9.5h16v9.2A2.3 2.3 0 0 1 17.7 21H6.3A2.3 2.3 0 0 1 4 18.7V9.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M4.8 5.2l14.7-3.1 1 4.5-14.7 3.1-1-4.5zM8 6.2l2.1 3.9M13 5.1l2.1 3.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 14.2l.6 1.3 1.4.2-1 .9.3 1.4-1.3-.7-1.3.7.3-1.4-1-.9 1.4-.2.6-1.3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Direction créative</h3>
+                    <p>Concepts visuels, moodboards, choix des lieux, cadrage et cohérence globale pour construire une image qui marque.</p>
+                    <div class="skills__bar" aria-hidden="true"><div class="skills__fill"></div></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="process" aria-labelledby="process-title">
+            <div class="section-heading">
+                <p class="eyebrow">Méthode</p>
+                <h2 id="process-title" class="section__title">Une production claire</h2>
+            </div>
+
+            <div class="process__grid">
+                <article class="process__step">
+                    <span>01</span>
+                    <h3>Préparation</h3>
+                    <p>Brief, références, choix du lieu, ambiance et objectifs de diffusion.</p>
+                </article>
+                <article class="process__step">
+                    <span>02</span>
+                    <h3>Tournage</h3>
+                    <p>Captation photo/vidéo avec attention aux détails, aux lignes et à la lumière.</p>
+                </article>
+                <article class="process__step">
+                    <span>03</span>
+                    <h3>Post-production</h3>
+                    <p>Sélection, montage, retouche, colorimétrie et export optimisé.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="apropos" class="about">
+            <div class="section-heading">
+                <p class="eyebrow">Profil</p>
+                <h2 class="section__title">À propos de moi</h2>
+            </div>
+
+            <div class="about__content">
+                <div class="about__text">
+                    <h3>Gabriel Peri</h3>
+                    <p>Photographe et vidéaste basé en Corse, je crée des images cinématographiques avec une attention particulière portée aux détails, à la lumière et à l’émotion.</p>
+                    <p>Spécialisé dans le contenu automobile, je réalise aussi des shootings et vidéos pour particuliers, marques et événements : portraits, produits, lifestyle et reportages.</p>
+                    <p>De la prise de vue au montage, mon objectif est simple : livrer un rendu propre, percutant et fidèle à votre univers.</p>
+                    <a class="text-link" href="projet.html">Voir les projets sélectionnés</a>
                 </div>
-                <h3>Photographie</h3>
-                <p>Prises de vue soignées (portrait, produit, lifestyle, événement) avec un rendu cinématographique et une attention aux détails.</p>
-                <div class="skills__bar"><div class="skills__fill"></div></div>
+                <div class="about__image" role="img" aria-label="Ambiance visuelle automobile cinématographique"></div>
             </div>
+        </section>
 
-            <div class="skills__card">
-                <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="3.5" y="7" width="12.5" height="10" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                        <path d="M16 10l4.6-2.6v9.2L16 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <path d="M7.5 11.2h.01M10.5 11.2h.01M7.5 13.8h.01M10.5 13.8h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
+        <section id="contact" class="contact">
+            <div class="contact__content">
+                <div class="section-heading section-heading--compact">
+                    <p class="eyebrow">Contact</p>
+                    <h2>Me contacter</h2>
+                    <p class="section__intro">Un shooting, une vidéo, un événement ou une idée à développer ? Envoyez-moi quelques détails et je reviens vers vous.</p>
                 </div>
-                <h3>Vidéographie</h3>
-                <p>Tournage stabilisé, composition dynamique et narration visuelle pour clips, événements, contenus marque et réseaux sociaux.</p>
-                <div class="skills__bar"><div class="skills__fill"></div></div>
-            </div>
 
-            <div class="skills__card">
-                <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="4" y="6.5" width="16" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                        <path d="M8 6.5v11M16 6.5v11" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                        <path d="M6 9h.01M6 12h.01M6 15h.01M18 9h.01M18 12h.01M18 15h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M10 19.5h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M9 21h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <h3>Montage &amp; Colorimétrie</h3>
-                <p>Montage rythmé, sound design, étalonnage et finitions propres pour un rendu premium cohérent avec votre identité.</p>
-                <div class="skills__bar"><div class="skills__fill"></div></div>
-            </div>
+                <div class="contact__layout">
+                    <div class="contact__panel">
+                        <h3>Disponible pour</h3>
+                        <ul class="contact__list">
+                            <li>Shootings automobiles</li>
+                            <li>Vidéos réseaux sociaux</li>
+                            <li>Événements &amp; rassemblements</li>
+                            <li>Portraits, lifestyle et produits</li>
+                        </ul>
 
-            <div class="skills__card">
-                <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M7 17l7.8-7.8a2.2 2.2 0 0 1 3.1 0 2.2 2.2 0 0 1 0 3.1L10.1 20H7v-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <path d="M12.2 6.6l1.1-1.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M15.6 7.9l1.6-.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M13.2 10.3l.4 1.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M5.2 5.2l1.2.4.4 1.2.4-1.2 1.2-.4-1.2-.4-.4-1.2-.4 1.2-1.2.4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h3>Retouche Photo</h3>
-                <p>Retouches naturelles, nettoyage, peau, couleurs et optimisation pour un rendu professionnel sans sur-traitement.</p>
-                <div class="skills__bar"><div class="skills__fill"></div></div>
-            </div>
+                        <div class="contact__social" aria-label="Réseaux sociaux">
+                            <a class="contact__social-link" href="https://www.instagram.com/gperi2a/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <svg class="contact__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.8A5.2 5.2 0 1 1 6.8 14 5.2 5.2 0 0 1 12 8.8zm0 2A3.2 3.2 0 1 0 15.2 14 3.2 3.2 0 0 0 12 10.8zM17.8 6.7a1.2 1.2 0 1 1-1.2-1.2 1.2 1.2 0 0 1 1.2 1.2z"/>
+                                </svg>
+                            </a>
+                            <a class="contact__social-link" href="https://www.linkedin.com/in/gabriel-peri-612729355/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <svg class="contact__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1A4.2 4.2 0 0 1 17.7 8.8C21 8.8 22 11 22 14.5V21h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21h-4V9z"/>
+                                </svg>
+                            </a>
+                            <a class="contact__social-link" href="https://www.facebook.com/gabriel.peri2a/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <svg class="contact__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.6c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.4.7-1.4 1.4V12H16l-.5 3h-2.5v7A10 10 0 0 0 22 12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="skills__card">
-                <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
-                        <!-- Traits de vitesse -->
-                        <path d="M2.5 10.2h4" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                        <path d="M1.8 13h5.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                        <!-- Carrosserie -->
-                        <path d="M6.2 15.2h12.8c1.6 0 2.9-1.3 2.9-2.9v-.2c0-1.2-.8-2.3-2-2.7l-2.2-.6-1.7-1.9A3.7 3.7 0 0 0 13.3 5.6h-2.9A4.1 4.1 0 0 0 7 7.5L5.6 9.9l-2.2.5A2.6 2.6 0 0 0 1.4 13c.2 1.2 1.3 2.2 2.6 2.2h1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <!-- Vitre / ligne -->
-                        <path d="M7.9 10.2l1.6-2.2c.4-.6 1.1-1 1.8-1h2.4c.7 0 1.3.3 1.8.8l2 2.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <!-- Roues -->
-                        <circle cx="8.1" cy="17.2" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                        <circle cx="17.3" cy="17.2" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                        <path d="M7.2 17.2h.01M16.4 17.2h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <h3>Vidéographie Automobile</h3>
-                <p>Spécialiste en capture de véhicules avec angles dynamiques, techniques cinématographiques avancées et production de qualité professionnelle.</p>
-                <div class="skills__bar"><div class="skills__fill"></div></div>
-            </div>
+                    <form class="contact__form" id="contactForm" method="post" action="mailto:gabriel.peri2006@gmail.com?subject=Contact%20depuis%20le%20portfolio" enctype="text/plain" target="_blank">
+                        <label class="u-sr-only" for="contactName">Votre nom</label>
+                        <input class="contact__input" id="contactName" name="name" type="text" placeholder="Votre nom" required>
 
-            <div class="skills__card">
-                <div class="skills__icon">
-                    <svg class="skills__icon-svg" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M4 9.5h16v9.2A2.3 2.3 0 0 1 17.7 21H6.3A2.3 2.3 0 0 1 4 18.7V9.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <path d="M4.8 5.2l14.7-3.1 1 4.5-14.7 3.1-1-4.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                        <path d="M8 6.2l2.1 3.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M13 5.1l2.1 3.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M12 14.2l.6 1.3 1.4.2-1 .9.3 1.4-1.3-.7-1.3.7.3-1.4-1-.9 1.4-.2.6-1.3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h3>Direction Créative</h3>
-                <p>Conception de concepts visuels, moodboards, direction artistique et cohérence globale pour un rendu qui marque.</p>
-                <div class="skills__bar"><div class="skills__fill"></div></div>
-            </div>
+                        <label class="u-sr-only" for="contactEmail">Votre email</label>
+                        <input class="contact__input" id="contactEmail" name="email" type="email" placeholder="Votre email" required>
 
-        </div>
-    </section>
+                        <label class="u-sr-only" for="contactSubject">Sujet</label>
+                        <input class="contact__input" id="contactSubject" name="subject" type="text" placeholder="Sujet">
 
-    <section id="apropos" class="about">
-        <h2 class="section__title">À Propos de Moi</h2>
-        <div class="about__content">
-            <div class="about__text">
-                <p class="about__name">Gabriel Peri</p>
-                <p>Photographe et vidéaste basé en Corse, je crée des images cinématographiques avec une attention particulière portée aux détails et à l’émotion.</p>
-                <p>Spécialisé en contenu automobile, je réalise aussi des shootings et vidéos pour particuliers, marques et événements : portraits, produits, lifestyle et reportages.</p>
-                <p>De la prise de vue au montage, j’apporte une approche exigeante et créative pour livrer un rendu propre, percutant et fidèle à votre univers.</p>
-            </div>
-            <div class="about__image"></div>
-        </div>
-    </section>
+                        <label class="u-sr-only" for="contactMessage">Votre message</label>
+                        <textarea class="contact__textarea" id="contactMessage" name="message" placeholder="Parlez-moi de votre projet..." required></textarea>
 
-    <section id="contact" class="contact">
-        <div class="contact__content">
-            <h2>Me Contacter</h2>
-            <p class="contact__intro">Parlez-moi de votre projet photo ou vidéo, je vous répondrai au plus vite.</p>
-
-            <div class="contact__social-wrapper">
-                <h3 class="u-sr-only">Mes réseaux sociaux</h3>
-                <div class="contact__social" role="region" aria-label="Réseaux sociaux">
-                <a class="contact__social-link" href="https://www.instagram.com/gperi2a/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <svg class="contact__social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.8A5.2 5.2 0 1 1 6.8 14 5.2 5.2 0 0 1 12 8.8zm0 2A3.2 3.2 0 1 0 15.2 14 3.2 3.2 0 0 0 12 10.8zM17.8 6.7a1.2 1.2 0 1 1-1.2-1.2 1.2 1.2 0 0 1 1.2 1.2z"/>
-                    </svg>
-                </a>
-                <a class="contact__social-link" href="https://www.linkedin.com/in/gabriel-peri-612729355/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg class="contact__social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1A4.2 4.2 0 0 1 17.7 8.8C21 8.8 22 11 22 14.5V21h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21h-4V9z"/>
-                    </svg>
-                </a>
-                <a class="contact__social-link" href="https://www.facebook.com/gabriel.peri2a/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <svg class="contact__social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.6c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.4.7-1.4 1.4V12H16l-.5 3h-2.5v7A10 10 0 0 0 22 12z"/>
-                    </svg>
-                </a>
+                        <button type="submit" class="contact__submit btn btn--dark">Envoyer le message</button>
+                    </form>
                 </div>
             </div>
-
-            <form class="contact__form" id="contactForm" method="post" action="mailto:gabriel.peri2006@gmail.com?subject=Contact%20depuis%20le%20portfolio" enctype="text/plain" target="_blank">
-                <label class="u-sr-only" for="contactName">Votre nom</label>
-                <input class="contact__input" id="contactName" name="name" type="text" placeholder="Votre nom" autocomplete="name" required>
-
-                <label class="u-sr-only" for="contactEmail">Votre email</label>
-                <input class="contact__input" id="contactEmail" name="email" type="email" placeholder="Votre email" autocomplete="email" required>
-
-                <label class="u-sr-only" for="contactSubject">Sujet</label>
-                <input class="contact__input" id="contactSubject" name="subject" type="text" placeholder="Sujet" autocomplete="off">
-
-                <label class="u-sr-only" for="contactMessage">Votre message</label>
-                <textarea class="contact__textarea" id="contactMessage" name="message" placeholder="Votre message" autocomplete="off" required></textarea>
-
-                <button type="submit" class="contact__submit btn btn--dark">Envoyer</button>
-            </form>
-        </div>
-    </section>
+        </section>
     </main>
 
-    <!-- No JavaScript: tabs and lightbox are implemented with CSS-only techniques. -->
+    <!-- Curseur personnalisé intégré directement : aucun fichier cursor.js externe nécessaire. -->
+    <script>
+/* ==========================================================
+   CURSEUR PERSONNALISÉ — Nickel MTN
+   - Actif uniquement avec souris/trackpad précis
+   - Désactivé sur mobile et si prefers-reduced-motion: reduce
+   - Change d'état sur liens, boutons, labels, champs de formulaire
+   ========================================================== */
+(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
 
+    if (prefersReducedMotion || !supportsFinePointer) return;
+
+    const html = document.documentElement;
+    const body = document.body;
+    const dot = document.createElement('span');
+    const ring = document.createElement('span');
+
+    dot.className = 'cursor-dot';
+    ring.className = 'cursor-ring';
+    dot.setAttribute('aria-hidden', 'true');
+    ring.setAttribute('aria-hidden', 'true');
+    body.append(dot, ring);
+    html.classList.add('has-custom-cursor');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    const interactiveSelector = [
+        'a', 'button', 'label', 'summary',
+        'input', 'textarea', 'select',
+        '[role="button"]', '[tabindex]:not([tabindex="-1"])',
+        'video[controls]', '.tabs__label', '.lightbox-close'
+    ].join(',');
+
+    const textSelector = 'input:not([type="button"]):not([type="submit"]), textarea, [contenteditable="true"]';
+
+    const setPosition = (element, x, y) => {
+        element.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+    };
+
+    const animate = () => {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        setPosition(dot, mouseX, mouseY);
+        setPosition(ring, ringX, ringY);
+        requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('mousemove', (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+    }, { passive: true });
+
+    document.addEventListener('mouseover', (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        body.classList.toggle('is-cursor-hover', Boolean(target.closest(interactiveSelector)));
+        body.classList.toggle('is-cursor-text', Boolean(target.closest(textSelector)));
+    });
+
+    document.addEventListener('mouseout', (event) => {
+        const related = event.relatedTarget;
+        if (!related || related === document.documentElement) {
+            body.classList.remove('is-cursor-hover', 'is-cursor-text');
+        }
+    });
+
+    document.addEventListener('mouseleave', () => {
+        dot.style.opacity = '0';
+        ring.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        dot.style.opacity = '';
+        ring.style.opacity = '';
+    });
+
+    animate();
+})();
+    </script>
 </body>
 </html>
