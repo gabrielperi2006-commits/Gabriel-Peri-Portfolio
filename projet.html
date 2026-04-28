@@ -4,28 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security / Best practices -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; media-src 'self' https:; style-src 'self'; script-src 'none'; upgrade-insecure-requests; block-all-mixed-content">
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-    <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; media-src 'self'; style-src 'self'; script-src 'self' 'sha256-Yab5ZCmyjrxSdFRJy+gSghcUNnM7lCpbXUeb02xDtOY='; form-action 'self' mailto:">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="description" content="Découvrez les projets de Gabriel Peri - Portfolio de projets automobiles, shootings créatifs et productions vidéo réalisées pour des marques et particuliers.">
-    <meta name="theme-color" content="#1E7BFF">
-    <meta name="keywords" content="Projets, Automobile, Vidéo, Photographie, Portfolio, Production">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+    <meta name="description" content="Découvrez les projets de Gabriel Peri : spots automobiles, shootings créatifs, vidéos réseaux sociaux et productions cinématographiques.">
+    <meta name="theme-color" content="#F7B955">
+    <meta name="keywords" content="Gabriel Peri, Projets, Automobile, Vidéo, Photographie, Portfolio, Production">
     <meta name="author" content="Gabriel Peri">
-    <meta property="og:title" content="Mes Projets - Gabriel Peri">
-    <meta property="og:description" content="Découvrez les projets de Gabriel Peri - Portfolio de projets automobiles, shootings créatifs et productions vidéo.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gabrielperi2006-commits.github.io/Gabriel-Peri-Portfolio/projet.html">
-    <link rel="canonical" href="https://gabrielperi2006-commits.github.io/Gabriel-Peri-Portfolio/projet.html">
-    <meta property="og:image" content="https://gabrielperi2006-commits.github.io/Gabriel-Peri-Portfolio/logo-gpp.webp">
-    <meta name="twitter:card" content="summary_large_image">
     <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20fill%3D%22%231E7BFF%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2224%22%20font-size%3D%2224%22%20font-weight%3D%22bold%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EGP%3C%2Ftext%3E%3C%2Fsvg%3E">
+
+    <meta property="og:title" content="Mes Projets - Gabriel Peri">
+    <meta property="og:description" content="Sélection de projets automobiles, shootings créatifs et productions vidéo de Gabriel Peri.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gabrielperi.com/projet.html">
+    <meta property="og:image" content="https://gabrielperi.com/logo-gpp.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="canonical" href="https://gabrielperi.com/projet.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%23F7B955' width='32' height='32'/><text x='16' y='24' font-size='24' font-weight='bold' fill='white' text-anchor='middle'>GP</text></svg>">
 
     <!-- Performance -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="projet.css" as="style">
     <link rel="preload" as="image" href="porsche_rear.webp" fetchpriority="high">
+
+    <link rel="preload" as="image" href="car-burger.svg" type="image/svg+xml">
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -34,117 +39,261 @@
     <title>Mes Projets - Gabriel Peri</title>
 </head>
 <body>
-    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-    <header class="page-header">
-        <nav class="site-nav" aria-label="Navigation principale">
-            <a href="index.html#accueil" class="logo site-nav__logo">
-                <img src="logo-gpp.webp" alt="Logo GPP - Gabriel Peri" class="site-nav__logo-img" decoding="async" fetchpriority="high" width="60" height="60">
-            </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+        <a href="index.html#accueil" class="site-nav__logo" aria-label="Retour à l'accueil">
+            <img src="logo-gpp.webp" alt="Logo GPP - Gabriel Peri" class="site-nav__logo-img" decoding="async" fetchpriority="high" width="60" height="60">
+        </a>
 
-            <input type="checkbox" id="menu-toggle" class="site-nav__checkbox" aria-controls="site-menu">
-            <label class="menu-toggle site-nav__toggle" for="menu-toggle" aria-label="Ouvrir ou fermer le menu">
-                <span class="u-sr-only">Ouvrir ou fermer le menu</span>
-                <span class="site-nav__bar"></span>
-                <span class="site-nav__bar"></span>
-                <span class="site-nav__bar"></span>
-            </label>
+        <input type="checkbox" id="menu-toggle" class="site-nav__checkbox">
+        <label class="site-nav__toggle" for="menu-toggle" aria-label="Ouvrir ou fermer le menu" aria-controls="site-menu">
+            <img class="site-nav__car-icon" src="car-burger.svg" alt="" aria-hidden="true" width="28" height="15">
+            <span class="site-nav__bar"></span>
+            <span class="site-nav__bar"></span>
+            <span class="site-nav__bar"></span>
+        </label>
 
-            <ul class="site-nav__list" id="site-menu" aria-label="Menu principal">
-                <li class="site-nav__item"><a href="index.html#accueil" class="site-nav__link">Accueil</a></li>
-                <li class="site-nav__item"><a href="index.html#realisations" class="site-nav__link">Réalisations</a></li>
-                <li class="site-nav__item"><a href="projet.html" class="active site-nav__link site-nav__link--active" aria-current="page">Projets</a></li>
-                <li class="site-nav__item"><a href="index.html#competences" class="site-nav__link">Compétences</a></li>
-                <li class="site-nav__item"><a href="index.html#apropos" class="site-nav__link">À propos</a></li>
-                <li class="site-nav__item"><a href="index.html#contact" class="site-nav__link">Contact</a></li>
-            </ul>
-        </nav>
+        <ul class="site-nav__list" id="site-menu">
+            <li class="site-nav__item"><a href="index.html#accueil" class="site-nav__link">Accueil</a></li>
+            <li class="site-nav__item"><a href="index.html#realisations" class="site-nav__link">Réalisations</a></li>
+            <li class="site-nav__item"><a href="projet.html" class="site-nav__link site-nav__link--active" aria-current="page">Projets</a></li>
+            <li class="site-nav__item"><a href="index.html#competences" class="site-nav__link">Compétences</a></li>
+            <li class="site-nav__item"><a href="index.html#apropos" class="site-nav__link">À propos</a></li>
+            <li class="site-nav__item"><a href="index.html#contact" class="site-nav__link">Contact</a></li>
+        </ul>
+    </nav>
 
-        <section id="accueil" class="hero hero--projects" aria-labelledby="page-title">
+    <main id="contenu">
+        <section id="accueil" class="hero hero--projects">
+            <div class="hero__glow hero__glow--one" aria-hidden="true"></div>
+            <div class="hero__glow hero__glow--two" aria-hidden="true"></div>
+
             <div class="hero__content">
                 <div class="hero__text">
+                    <p class="eyebrow hero__eyebrow">Sélection de travaux</p>
                     <img class="hero__title-car hero__title-car--rear" src="porsche_rear.webp" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high" width="1200" height="1000">
-                    <h1 class="hero__title" id="page-title">Mes projets</h1>
+                    <h1 class="hero__title">Mes Projets</h1>
                     <p class="subtitle hero__subtitle">Automobile • Vidéo • Photographie</p>
-                    <p class="hero__description">Découvrez une sélection de projets automobiles, shootings créatifs et productions vidéo réalisées pour des particuliers, marques et événements en Corse et ailleurs.</p>
-                    <a href="#tous-projets" class="cta-button btn btn--primary hero__cta">Voir tous les projets</a>
+                    <p class="hero__description">Une sélection de projets automobiles, shootings créatifs et productions vidéo pensés pour attirer l’œil dès les premières secondes.</p>
+                    <div class="hero__actions">
+                        <a href="#tous-projets" class="btn btn--primary hero__cta">Voir tous les projets</a>
+                        <a href="index.html#contact" class="btn btn--ghost">Proposer un projet</a>
+                    </div>
                 </div>
             </div>
         </section>
-    </header>
 
-    <main id="main-content" class="projects-page">
-        <section id="tous-projets" class="projects-section" aria-labelledby="projets-completes-title">
-            <h2 class="section__title section__title--pill" id="projets-completes-title">
-                <span class="status-pill status-pill--heading">Projets complétés</span>
-            </h2>
+        <section class="projects-intro" aria-labelledby="projects-intro-title">
+            <div>
+                <p class="eyebrow">Direction visuelle</p>
+                <h2 id="projects-intro-title">Des projets pensés comme des mini-campagnes</h2>
+            </div>
+            <p>Chaque production met l’accent sur le rythme, les détails, la lumière et l’usage final : réseaux sociaux, portfolio, événement ou communication de marque.</p>
+        </section>
+
+        <section id="tous-projets" class="projects-section">
+            <div class="projects-section__heading">
+                <h2 class="section__title section__title--pill"><span class="status-pill status-pill--heading">Complété</span></h2>
+                <p>Projets finalisés ou présentés comme références principales.</p>
+            </div>
+
             <div class="projects-container projects__grid">
                 <article class="project-card projects__card">
-                    <div class="project-image projects__image">
+                    <a class="projects__image" href="index.html#realisations" aria-label="Voir les réalisations BMW M4 Competition">
                         <img src="BMW.webp" alt="BMW M4 Competition" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    </a>
+                    <div class="projects__body">
+                        <p class="project-status projects__status status-pill status-completed">Complété</p>
+                        <h3>Spot vidéo – BMW M4 Competition</h3>
+                        <p>Réalisation d’un spot dynamique axé sur les lignes et la puissance de la BMW M4. Golden hour, plans stabilisés et séquences embarquées.</p>
+                        <ul class="project-tags">
+                            <li>Vidéo</li>
+                            <li>Automobile</li>
+                            <li>Golden hour</li>
+                        </ul>
                     </div>
-                    <h3>Spot vidéo – BMW M4 Competition</h3>
-                    <p class="project-status projects__status status-pill status-completed">Complété</p>
-                    <p>Réalisation d’un spot dynamique axé sur les lignes et la puissance de la BMW M4. Tournage en golden hour, plans stabilisés et séquences embarquées.</p>
                 </article>
 
                 <article class="project-card projects__card">
-                    <div class="project-image projects__image">
-                        <img src="Porsche%20orange.webp" alt="Porsche 911" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    <a class="projects__image" href="index.html#realisations" aria-label="Voir le shooting Porsche 911">
+                        <img src="Porsche orange.webp" alt="Porsche 911" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    </a>
+                    <div class="projects__body">
+                        <p class="project-status projects__status status-pill status-completed">Complété</p>
+                        <h3>Shooting photo – Porsche 911</h3>
+                        <p>Série photo en bord de mer, entre ambiance lifestyle et détails techniques du véhicule pour un rendu premium et éditorial.</p>
+                        <ul class="project-tags">
+                            <li>Photo</li>
+                            <li>Lifestyle</li>
+                            <li>Premium</li>
+                        </ul>
                     </div>
-                    <h3>Shooting photo – Porsche 911</h3>
-                    <p class="project-status projects__status status-pill status-completed">Complété</p>
-                    <p>Série photo réalisée en bord de mer, mélangeant ambiance lifestyle et détails techniques du véhicule pour un rendu premium.</p>
                 </article>
 
                 <article class="project-card projects__card">
-                    <div class="project-image projects__image">
-                        <img src="BMW.webp" alt="Rassemblement auto" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    <a class="projects__image" href="index.html#realisations" aria-label="Voir la vidéo événement rassemblement auto">
+                        <img src="BMW.webp" alt="Rassemblement automobile" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    </a>
+                    <div class="projects__body">
+                        <p class="project-status projects__status status-pill status-completed">Complété</p>
+                        <h3>Vidéo événement – Rassemblement auto</h3>
+                        <p>Couverture vidéo complète d’un rassemblement automobile : captation au sol, plans d’ambiance et montage rythmé pour les réseaux sociaux.</p>
+                        <ul class="project-tags">
+                            <li>Événement</li>
+                            <li>Aftermovie</li>
+                            <li>Social media</li>
+                        </ul>
                     </div>
-                    <h3>Vidéo événement – Rassemblement auto</h3>
-                    <p class="project-status projects__status status-pill status-completed">Complété</p>
-                    <p>Couverture vidéo complète d’un rassemblement automobile : captation au sol et prise de vues aériennes, montage rythmé pour les réseaux sociaux.</p>
                 </article>
             </div>
         </section>
 
-        <section id="projets-en-cours" class="projects-section" aria-labelledby="projets-en-cours-title">
-            <h2 class="section__title section__title--pill" id="projets-en-cours-title">
-                <span class="status-pill status-pill--heading">Projets en cours</span>
-            </h2>
+        <section id="projets-en-cours" class="projects-section">
+            <div class="projects-section__heading">
+                <h2 class="section__title section__title--pill"><span class="status-pill status-pill--heading">En cours</span></h2>
+                <p>Projets en développement ou formats à enrichir avec de nouveaux visuels.</p>
+            </div>
+
             <div class="projects-container projects__grid">
                 <article class="project-card projects__card">
-                    <div class="project-image projects__image">
-                        <img src="Porsche.webp" alt="Campagne social media" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    <a class="projects__image" href="index.html#contact" aria-label="Discuter d'une campagne social media">
+                        <img src="Porsche.webp" alt="Campagne social media pour marque automobile" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    </a>
+                    <div class="projects__body">
+                        <p class="project-status projects__status status-pill status-ongoing">En cours</p>
+                        <h3>Campagne social media – Marque auto</h3>
+                        <p>Série de vidéos courtes optimisées pour Instagram et TikTok, conçues pour mettre en avant un modèle sportif en quelques secondes.</p>
+                        <ul class="project-tags">
+                            <li>Reels</li>
+                            <li>TikTok</li>
+                            <li>Marque</li>
+                        </ul>
                     </div>
-                    <h3>Campagne social media – Marque auto</h3>
-                    <p class="project-status projects__status status-pill status-ongoing">En cours</p>
-                    <p>Série de vidéos courtes optimisées pour Instagram et TikTok mettant en avant un nouveau modèle sportif.</p>
                 </article>
 
                 <article class="project-card projects__card">
-                    <div class="project-image projects__image">
-                        <img src="Ford.webp" alt="Short film" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    <a class="projects__image" href="index.html#contact" aria-label="Discuter du short film Passion automobile">
+                        <img src="Ford.webp" alt="Short film passion automobile" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    </a>
+                    <div class="projects__body">
+                        <p class="project-status projects__status status-pill status-ongoing">En cours</p>
+                        <h3>Short film – Passion automobile</h3>
+                        <p>Projet personnel mêlant storytelling, cinématique automobile et paysages de Corse pour créer une vidéo plus immersive et émotionnelle.</p>
+                        <ul class="project-tags">
+                            <li>Film court</li>
+                            <li>Storytelling</li>
+                            <li>Corse</li>
+                        </ul>
                     </div>
-                    <h3>Short film – Passion automobile</h3>
-                    <p class="project-status projects__status status-pill status-ongoing">En cours</p>
-                    <p>Projet personnel mêlant storytelling, cinématique automobile et paysages de Corse pour un rendu très visuel.</p>
                 </article>
 
                 <article class="project-card projects__card">
-                    <div class="project-image projects__image">
-                        <img src="Alpine.webp" alt="Portfolio clients privés" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    <a class="projects__image" href="index.html#contact" aria-label="Discuter d'un portfolio photo pour client privé">
+                        <img src="Alpine.webp" alt="Portfolio photo pour clients privés" decoding="async" height="900" loading="lazy" width="1200" fetchpriority="low">
+                    </a>
+                    <div class="projects__body">
+                        <p class="project-status projects__status status-pill status-ongoing">En cours</p>
+                        <h3>Portfolio photo clients privés</h3>
+                        <p>Sélection d’images haut de gamme pour propriétaires de véhicules de prestige, avec une mise en page dédiée au portfolio.</p>
+                        <ul class="project-tags">
+                            <li>Portfolio</li>
+                            <li>Prestige</li>
+                            <li>Détails</li>
+                        </ul>
                     </div>
-                    <h3>Portfolio photo clients privés</h3>
-                    <p class="project-status projects__status status-pill status-ongoing">En cours</p>
-                    <p>Sélection d’images haut de gamme pour des propriétaires de véhicules de prestige, à intégrer dans un portfolio dédié.</p>
                 </article>
             </div>
         </section>
 
         <div class="back-button projects__back">
-            <a class="back-link btn btn--outline projects__back-link" href="index.html#contact">Me contacter pour un projet</a>
+            <a class="back-link btn btn--primary projects__back-link" href="index.html#contact">Me contacter pour un projet</a>
         </div>
     </main>
+    <!-- Curseur personnalisé intégré directement : aucun fichier cursor.js externe nécessaire. -->
+    <script>
+/* ==========================================================
+   CURSEUR PERSONNALISÉ — Nickel MTN
+   - Actif uniquement avec souris/trackpad précis
+   - Désactivé sur mobile et si prefers-reduced-motion: reduce
+   - Change d'état sur liens, boutons, labels, champs de formulaire
+   ========================================================== */
+(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
+
+    if (prefersReducedMotion || !supportsFinePointer) return;
+
+    const html = document.documentElement;
+    const body = document.body;
+    const dot = document.createElement('span');
+    const ring = document.createElement('span');
+
+    dot.className = 'cursor-dot';
+    ring.className = 'cursor-ring';
+    dot.setAttribute('aria-hidden', 'true');
+    ring.setAttribute('aria-hidden', 'true');
+    body.append(dot, ring);
+    html.classList.add('has-custom-cursor');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    const interactiveSelector = [
+        'a', 'button', 'label', 'summary',
+        'input', 'textarea', 'select',
+        '[role="button"]', '[tabindex]:not([tabindex="-1"])',
+        'video[controls]', '.tabs__label', '.lightbox-close'
+    ].join(',');
+
+    const textSelector = 'input:not([type="button"]):not([type="submit"]), textarea, [contenteditable="true"]';
+
+    const setPosition = (element, x, y) => {
+        element.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+    };
+
+    const animate = () => {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        setPosition(dot, mouseX, mouseY);
+        setPosition(ring, ringX, ringY);
+        requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('mousemove', (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+    }, { passive: true });
+
+    document.addEventListener('mouseover', (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        body.classList.toggle('is-cursor-hover', Boolean(target.closest(interactiveSelector)));
+        body.classList.toggle('is-cursor-text', Boolean(target.closest(textSelector)));
+    });
+
+    document.addEventListener('mouseout', (event) => {
+        const related = event.relatedTarget;
+        if (!related || related === document.documentElement) {
+            body.classList.remove('is-cursor-hover', 'is-cursor-text');
+        }
+    });
+
+    document.addEventListener('mouseleave', () => {
+        dot.style.opacity = '0';
+        ring.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        dot.style.opacity = '';
+        ring.style.opacity = '';
+    });
+
+    animate();
+})();
+    </script>
 </body>
 </html>
